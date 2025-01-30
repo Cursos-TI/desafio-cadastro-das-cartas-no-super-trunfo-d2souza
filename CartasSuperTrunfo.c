@@ -16,6 +16,9 @@ int main() {
     char estado;
     char nomeDaCidade[30];
     int codigoDaCarta;
+    float densidadePopulacional;
+    float pibPerCapta;
+
 
     // ENTRADAS DO USUÁRIO
 
@@ -46,6 +49,10 @@ int main() {
     //VERIFICA SE HÁ QUEBRA DE LINHA E SUBSTITUI PARA ENCERRAR A ENTRADA
     nomeDaCidade[strcspn(nomeDaCidade, "\n")] = '\0';
 
+    //CALCULOS DE DENSIDADE POPULACIONAL E PIB PER CAPTA
+    densidadePopulacional = (float)populacao / area;
+    pibPerCapta = (float)pib / populacao;
+
     //IMPRIME O RESULTADO DE FORMA ORDENADA
 
     printf("***********************\n");
@@ -56,6 +63,8 @@ int main() {
     printf("Area: %.2f km2\n", area);
     printf("PIB: %.2f bilhoes de reais\n", pib);
     printf("Numero de pontos turisticos: %d\n", numeroDePontosTuristicos);
+    printf("Densidade populacional: %.2f\n", densidadePopulacional);
+    printf("PIB per capta: %.2f\n", pibPerCapta);
     printf("***********************");
 
     return 0;
